@@ -1,15 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using NUnit.Framework;
+using System;
+using Turnup.Pages;
+using Turnup.Utilities;
 
-namespace Turnup.Test
+namespace Turnup.tests
 {
-    class Employee
+    [TestFixture]
+    [Parallelizable]
+    public class Employee : CommonDriver
+
     {
+
+        [Test]
+        public void CreateEmployeeTest()
+        {
+            HomePage homeObj = new HomePage(); 
+            homeObj.GoToEmployeePage(driver);
+
+            EmployeePage employeeObj = new EmployeePage();
+            employeeObj.CreateEmployee(driver);
+        }
+        [Test]
+        public void EditEmployeesTest()
+        {
+            HomePage homeObj = new HomePage();
+            homeObj.GoToEmployeePage(driver);
+
+            EmployeePage employeeObj = new EmployeePage();
+            employeeObj.EditEmployee(driver);
+        }
+        [Test]
+        public void DeleteEmployeesTest()
+        {
+            HomePage homeObj = new HomePage();
+            homeObj.GoToEmployeePage(driver);
+
+            EmployeePage employeeObj = new EmployeePage();
+            employeeObj.DeleteEmployee(driver);
+        }
 
 
     }
-
 }

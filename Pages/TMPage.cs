@@ -111,7 +111,7 @@ namespace Turnup.Pages
 
 
             Thread.Sleep(1000);
-            // It didn't work on wait
+           
             driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[4]/a[4]/span")).Click();
             Wait.WaitForIWebElementToExist(driver, "//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[1]", "xpath", 5);
 
@@ -147,8 +147,7 @@ namespace Turnup.Pages
 
             Wait.WaitForIWebElementToExist(driver, "//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[2]", "xpath", 5);
 
-            IWebElement DeleteButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[2]"));  ////*[@id="tmsGrid"]/div[4]/a[4]/span
-
+            IWebElement DeleteButton = driver.FindElement(By.XPath("//*[@id='tmsGrid']/div[3]/table/tbody/tr[last()]/td[5]/a[2]"));  
             DeleteButton.Click();
 
             // Switching to Alert
